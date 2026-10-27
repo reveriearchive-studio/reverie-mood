@@ -1,439 +1,620 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Reverie Mood: A Soft Place to Land</title>
-  <meta name="description" content="A gentle mood journal for the good days and the heavy ones, even if you have never kept a journal. Set a mood in seconds, breathe, write a little. No guilt, no pressure.">
-  <meta name="theme-color" content="#f4eadb">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Reverie Mood: A Soft Place to Land">
-  <meta property="og:description" content="A gentle mood journal for the good days and the heavy ones. Set a mood, breathe, write a little. It never pushes you.">
-  <link rel="canonical" href="https://reveriearchive-studio.github.io/reverie-mood/">
-  <meta property="og:url" content="https://reveriearchive-studio.github.io/reverie-mood/">
-  <meta property="og:image" content="https://reveriearchive-studio.github.io/reverie-mood/assets/og-image.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
-  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "MobileApplication",
-    "name": "Reverie Mood",
-    "operatingSystem": "iOS 17.6 or later",
-    "applicationCategory": "LifestyleApplication",
-    "description": "A gentle mood journal with a Quiet Room for breathing, grounding and ambient sound, letters to yourself, and a private Shared Cove for two.",
-    "url": "https://apps.apple.com/us/app/reverie-mood/id6758533319",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "inLanguage": ["en", "zh-Hans"]
-  }
-  </script>
-  <style>
-    /* Fonts: the app itself uses Georgia and the system monospace, so this page does too.
-       No web-font request means no visitor IP address is handed to a third party, which
-       keeps the page consistent with the privacy promise it makes. */
-    :root {
-      --ink:#282016; --muted:#5f564c; --paper:#f4eadb; --paper-deep:#ead9c2; --red:#982f32;
-      --blue:#88a9b4; --line:rgba(62,43,25,.34); --cream:#fbf7ef; --teal:#3f6b75;
-      --serif: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, "Times New Roman", serif;
-      --mono: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
-    }
-    * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
-    body { margin:0; color:var(--ink); background:var(--paper); font-family:var(--serif); font-size:18px; line-height:1.55; }
-    body::before { content:""; position:fixed; inset:0; opacity:.22; pointer-events:none; z-index:5; background-image:radial-gradient(rgba(75,52,29,.18) .45px,transparent .6px), radial-gradient(rgba(255,255,255,.6) .6px,transparent .8px); background-size:7px 8px, 11px 13px; background-position:0 0, 3px 6px; mix-blend-mode:multiply; }
-    a { color:inherit; }
-    img { max-width:100%; height:auto; display:block; }
-    .shell { width:min(1180px,calc(100% - 40px)); margin:auto; }
-    .skip { position:absolute; left:-9999px; top:8px; background:var(--ink); color:var(--cream); padding:10px 14px; z-index:50; font:500 13px var(--mono); }
-    .skip:focus { left:8px; }
-    :focus-visible { outline:3px solid var(--red); outline-offset:3px; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverie Mood - Privacy Policy</title>
+  <link rel="canonical" href="https://reveriearchive-studio.github.io/reverie-mood/privacy/">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+    <style>
 
-    .eyebrow, .kicker { font:500 12px/1.3 var(--mono); letter-spacing:.16em; text-transform:uppercase; }
-    .eyebrow { color:var(--red); }
-    .kicker { color:var(--muted); }
-    .rule { display:flex; align-items:center; gap:10px; color:var(--red); }
-    .rule::before,.rule::after { content:""; height:1px; background:currentColor; flex:1; }
-    .rule span { width:8px; height:8px; transform:rotate(45deg); background:currentColor; }
+        :root {
+            --bg: #E3DFD6;
+            --surface: #ECE9E1;
+            --surface-raised: #FFFFFF;
+            --text-primary: #1C1917;
+            --text-secondary: #57534E;
+            --text-tertiary: #A8A29E;
+            --accent-red: #91222C;
+            --accent-warm: #B8977A;
+            --accent-teal: #5B8A8A;
+            --border-light: #E7E5E4;
+            --border-strong: #D6D3D1;
+        }
 
-    header { border-bottom:1px solid var(--line); position:relative; z-index:6; }
-    .topline { font:500 12px/1.3 var(--mono); letter-spacing:.1em; text-transform:uppercase; display:flex; justify-content:space-between; padding:10px 0; color:var(--muted); border-bottom:1px solid var(--line); }
-    nav { min-height:78px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
-    .wordmark { display:flex; align-items:center; gap:10px; font:700 22px/1 var(--serif); letter-spacing:-.02em; text-decoration:none; }
-    .mark { width:29px; height:29px; display:grid; place-items:center; color:var(--cream); background:var(--red); border-radius:50% 50% 45% 45%; font:600 14px var(--serif); }
-    .nav-links { display:flex; gap:22px; align-items:center; font:500 12px/1 var(--mono); letter-spacing:.1em; text-transform:uppercase; }
-    .nav-links a { text-decoration:none; opacity:.8; padding:8px 0; white-space:nowrap; }
-    .nav-links a:hover { opacity:1; color:var(--red); }
-    .button { display:inline-block; border:1px solid var(--red); background:var(--red); color:#fff8ee; padding:14px 20px; font:500 12px/1 var(--mono); letter-spacing:.1em; text-transform:uppercase; text-decoration:none; cursor:pointer; }
-    .button:hover { background:#782226; border-color:#782226; }
-    .button.secondary { color:var(--ink); background:transparent; border-color:var(--line); }
-    .button.secondary:hover { background:#ede0cf; }
-    /* Apple's official black badge, unmodified. Apple asks for at least 40 px of height and clear space of a quarter of the
-       height (12 px at 48 px) on every side, so nothing sits closer than that: see .hero-actions gap and the margins below. */
-    .store-badge { display:inline-block; line-height:0; margin:12px 0; }
-    .store-badge img { display:block; height:48px; width:auto; }
-    footer .credit { flex-basis:100%; text-transform:none; letter-spacing:.02em; font-size:11px; line-height:1.6; opacity:.9; }
+        * {
+            box-sizing: border-box;
+        }
 
-    .hero { padding:76px 0 26px; overflow:hidden; }
-    .hero-grid { display:grid; grid-template-columns:minmax(0,1.04fr) minmax(320px,.96fr); align-items:center; gap:44px; min-height:600px; }
-    .hero-copy { padding:20px 0 44px; }
-    h1 { margin:20px 0 22px; max-width:680px; font:700 clamp(46px,6.2vw,86px)/.95 var(--serif); letter-spacing:-.045em; }
-    .hero-copy p { margin:0; max-width:540px; color:#4a4137; font-size:clamp(19px,2vw,24px); line-height:1.4; }
-    .hero-actions { display:flex; flex-wrap:wrap; gap:13px; align-items:center; margin-top:34px; }
-    .hero-note { margin-top:18px; color:var(--muted); font:400 13px/1.5 var(--mono); letter-spacing:.04em; }
-    .hero-art { position:relative; display:grid; place-items:center; min-height:560px; }
-    .hero-art::before { content:""; position:absolute; width:84%; height:84%; border:1px solid rgba(152,47,50,.65); transform:rotate(4deg); }
-    .phone { width:min(340px,80%); position:relative; z-index:1; filter:drop-shadow(0 24px 25px rgba(47,31,18,.24)); transform:rotate(-3deg); }
-    .paper-note { position:absolute; z-index:2; background:#f9efdde8; max-width:225px; padding:18px 20px; bottom:26px; left:-3px; transform:rotate(-5deg); border:1px solid rgba(117,73,44,.25); box-shadow:8px 10px 18px rgba(67,42,26,.11); }
-    .paper-note p { margin:8px 0 0; font-size:17px; line-height:1.25; font-style:italic; }
+        body {
+            font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+            line-height: 1.75;
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 48px 30px 64px;
+            background: var(--bg);
+            color: var(--text-primary);
+            position: relative;
+            border: 1.5px solid var(--accent-red);
+        }
 
-    .ticker { overflow:hidden; border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:#e8d5b9; color:var(--red); }
-    .ticker-inner { white-space:nowrap; padding:12px 0; font:500 12px/1 var(--mono); letter-spacing:.16em; text-transform:uppercase; animation:scroll 40s linear infinite; }
-    @keyframes scroll { from { transform:translateX(0); } to { transform:translateX(-30%); } }
-    @media (prefers-reduced-motion: reduce) { .ticker-inner { animation:none; white-space:normal; text-align:center; padding:12px 16px; line-height:1.6; } html { scroll-behavior:auto; } }
+        /* Masthead Header */
+        .masthead {
+            text-align: center;
+            padding-bottom: 32px;
+            margin-bottom: 40px;
+        }
 
-    section { padding:100px 0; }
-    .section-head { display:grid; grid-template-columns:1fr 2fr; gap:50px; align-items:start; margin-bottom:46px; }
-    h2 { margin:0; font:700 clamp(34px,4.4vw,56px)/1.02 var(--serif); letter-spacing:-.035em; }
-    h3 { margin:0; font:700 26px/1.1 var(--serif); letter-spacing:-.02em; }
-    .section-intro { max-width:600px; margin:3px 0 0; font-size:20px; line-height:1.45; color:#4a4137; }
+        .masthead-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 9px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--text-tertiary);
+            margin-bottom: 8px;
+        }
 
-    .ways { border-top:1px solid var(--line); }
-    .way { padding:24px 0; display:grid; grid-template-columns:130px 1fr minmax(210px,.8fr); gap:24px; align-items:center; border-bottom:1px solid var(--line); }
-    .way-no { color:var(--red); font:500 12px/1.3 var(--mono); letter-spacing:.12em; }
-    .way p { margin:0; color:var(--muted); font-size:17px; line-height:1.4; }
+        .masthead-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--text-primary);
+            margin: 8px 0;
+        }
 
-    /* First five minutes */
-    .guide { background:#efe2cf; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
-    .guide-layout { display:grid; grid-template-columns:minmax(260px,.62fr) 1.38fr; gap:64px; align-items:start; }
-    .guide-shot { position:sticky; top:24px; }
-    .guide-shot img { border:8px solid #f5eadb; box-shadow:0 14px 21px rgba(54,35,20,.17); }
-    .guide-shot figcaption { margin-top:12px; font:400 13px/1.5 var(--mono); color:var(--muted); }
-    .steps { list-style:none; margin:0; padding:0; counter-reset:step; }
-    .steps li { counter-increment:step; position:relative; padding:0 0 30px 64px; border-bottom:1px solid var(--line); margin-bottom:28px; }
-    .steps li:last-child { border-bottom:0; margin-bottom:0; padding-bottom:0; }
-    .steps li::before { content:counter(step, decimal-leading-zero); position:absolute; left:0; top:2px; font:500 14px/1 var(--mono); color:var(--red); letter-spacing:.1em; }
-    .steps h3 { margin-bottom:8px; }
-    .steps p { margin:0 0 8px; color:#443b32; }
-    .steps p:last-child { margin-bottom:0; }
-    .ui { font:600 .78em/1 var(--mono); letter-spacing:.08em; text-transform:uppercase; background:var(--cream); border:1px solid var(--line); padding:3px 6px; white-space:nowrap; }
-    .optional { color:var(--muted); font-style:italic; }
+        .masthead-subtitle {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text-tertiary);
+        }
 
-    .cheat { margin-top:56px; border-top:1px solid var(--line); }
-    .cheat h3 { padding:28px 0 8px; }
-    .cheat table { width:100%; border-collapse:collapse; }
-    .cheat caption { text-align:left; color:var(--muted); font-size:17px; padding-bottom:12px; }
-    .cheat th, .cheat td { text-align:left; vertical-align:top; padding:14px 12px 14px 0; border-bottom:1px solid var(--line); font-size:17px; line-height:1.4; }
-    .cheat th { font:500 12px/1.4 var(--mono); letter-spacing:.1em; text-transform:uppercase; color:var(--red); width:34%; }
+        .double-rule {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            margin: 20px auto 0;
+            width: 200px;
+        }
 
-    .feature { background:#e7d8c6; border-bottom:1px solid var(--line); }
-    .feature-layout { display:grid; grid-template-columns:1fr 1.08fr; gap:72px; align-items:center; }
-    .feature-copy h2 { margin:16px 0 22px; }
-    .feature-copy p { max-width:500px; color:#4d4137; font-size:20px; line-height:1.45; }
-    .feature-copy .rule { width:78%; margin:26px 0; }
-    .room-list { margin:20px 0 0; padding:0; list-style:none; max-width:520px; }
-    .room-list li { padding:10px 0; border-top:1px solid var(--line); font-size:17px; line-height:1.4; }
-    .room-list li:last-child { border-bottom:1px solid var(--line); }
-    .room-list b { font:600 12px/1.4 var(--mono); letter-spacing:.1em; text-transform:uppercase; color:var(--red); display:inline-block; min-width:150px; }
-    .visual-pair { display:grid; grid-template-columns:1fr 1fr; align-items:end; gap:16px; }
-    .visual-pair img { width:100%; border:8px solid #f5eadb; box-shadow:0 14px 21px rgba(54,35,20,.17); }
-    .visual-pair img:first-child { transform:translateY(-40px) rotate(-2deg); }
-    .visual-pair img:last-child { transform:rotate(2deg); }
+        .double-rule .thick {
+            height: 2px;
+            background: var(--border-strong);
+        }
 
-    .cove { background:#b7ced1; padding-bottom:88px; }
-    .cove .section-head { margin-bottom:35px; }
-    .cove-card { min-height:500px; display:grid; grid-template-columns:.8fr 1.2fr; overflow:hidden; border:1px solid rgba(55,89,98,.56); background:rgba(244,234,219,.56); }
-    .cove-image { overflow:hidden; background:#cedddd; max-height:640px; }
-    .cove-image img { width:100%; height:100%; object-fit:cover; object-position:top; }
-    .cove-copy { padding:clamp(30px,5vw,70px); display:flex; flex-direction:column; justify-content:center; gap:16px; }
-    .cove-copy p { font-size:21px; line-height:1.45; max-width:520px; margin:0; }
-    .cove-copy .quote { margin-top:6px; padding-top:18px; border-top:1px solid rgba(55,89,98,.55); color:#32565f; font-style:italic; font-size:20px; }
+        .double-rule .thin {
+            height: 0.5px;
+            background: var(--border-strong);
+        }
 
-    .maker { background:var(--paper); }
-    .maker-layout { display:grid; grid-template-columns:1fr 1.6fr; gap:56px; align-items:start; }
-    .letter { max-width:660px; }
-    .letter p { margin:0 0 18px; font-size:20px; line-height:1.55; color:#3c342b; }
-    .letter .sign { margin-top:28px; font-style:italic; color:var(--red); }
+        .edition-date {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: var(--text-tertiary);
+            margin-top: 16px;
+        }
 
-    .privacy { text-align:center; padding:100px 0; background:#f1e5d2; border-top:1px solid var(--line); }
-    .privacy h2 { max-width:850px; margin:19px auto 20px; }
-    .privacy p { margin:0 auto; max-width:640px; color:var(--muted); font-size:20px; line-height:1.5; }
-    .privacy-grid { margin-top:46px; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--line); border-bottom:1px solid var(--line); text-align:center; }
-    .privacy-grid div { padding:24px 18px; }
-    .privacy-grid div+div { border-left:1px solid var(--line); }
-    .privacy-grid strong { display:block; margin-bottom:8px; font:700 24px/1.15 var(--serif); letter-spacing:-.02em; }
-    .privacy-grid span { color:var(--muted); font:500 12px/1.5 var(--mono); letter-spacing:.08em; text-transform:uppercase; }
-    .fineprint { margin-top:26px !important; font-size:16px !important; }
+        /* Section Headers */
+        h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 40px 0 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-light);
+        }
 
-    .faq { background:var(--paper); }
-    .faq-list { max-width:820px; margin:auto; border-top:1px solid var(--line); }
-    details { border-bottom:1px solid var(--line); padding:0; }
-    summary { cursor:pointer; list-style:none; padding:20px 36px 20px 0; font:700 21px/1.3 var(--serif); position:relative; }
-    summary::-webkit-details-marker { display:none; }
-    summary::after { content:"+"; position:absolute; right:6px; top:18px; font:400 28px/1 var(--mono); color:var(--red); }
-    details[open] summary::after { content:"\2212"; }
-    details > div { padding:0 0 22px; color:#443b32; font-size:18px; line-height:1.55; max-width:720px; }
-    details > div p { margin:0 0 12px; }
-    details > div p:last-child { margin:0; }
+        h3 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin: 24px 0 12px;
+        }
 
-    .closing { padding:96px 0; background:#9b3034; color:#fff4e5; text-align:center; position:relative; overflow:hidden; }
-    .closing h2 { position:relative; max-width:760px; margin:15px auto 24px; }
-    .closing .eyebrow { color:#f5cd9c; }
-    .closing p { position:relative; max-width:540px; margin:0 auto 28px; font-size:20px; line-height:1.45; }
-    .closing .button { position:relative; color:var(--red); background:#f9ecd9; border-color:#f9ecd9; }
-    .closing .button:hover { background:#fff; }
-    footer { color:#463d34; padding:34px 0; background:#e8d8c1; font:500 12px/1.6 var(--mono); letter-spacing:.07em; text-transform:uppercase; }
-    .footer-inner { display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
-    .footer-inner nav { min-height:0; gap:22px; justify-content:flex-start; flex-wrap:wrap; }
-    .footer-inner a { text-underline-offset:3px; }
+        /* Body Text */
+        p {
+            font-size: 15.5px;
+            color: var(--text-secondary);
+            margin: 12px 0;
+        }
 
-    @media (max-width:1100px) {
-      .nav-links { display:none; }
-    }
-    @media (max-width:900px) {
-      .guide-layout, .feature-layout, .maker-layout { grid-template-columns:1fr; gap:36px; }
-      .guide-shot { position:static; max-width:340px; margin:auto; }
-      .cove-card { grid-template-columns:1fr; }
-      .cove-image { max-height:420px; }
-    }
-    @media (max-width:780px) {
-      body { font-size:17px; }
-      .shell { width:min(100% - 32px,1180px); }
-      .topline span:last-child, .nav-links { display:none; }
-      nav { min-height:66px; }
-      .hero { padding-top:30px; }
-      .hero-grid { grid-template-columns:1fr; gap:24px; min-height:0; }
-      .hero-copy { padding-bottom:0; }
-      .hero-art { min-height:480px; }
-      .paper-note { left:2px; }
-      .section-head { grid-template-columns:1fr; gap:14px; }
-      .way { grid-template-columns:1fr; gap:8px; }
-      .visual-pair { max-width:520px; margin:auto; }
-      .privacy-grid { grid-template-columns:1fr; }
-      .privacy-grid div+div { border-left:0; border-top:1px solid var(--line); }
-      section { padding:72px 0; }
-      .closing { padding:72px 0; }
-      .steps li { padding-left:48px; }
-      .cheat th, .cheat td { display:block; width:100%; padding:6px 0; }
-      .cheat tr { display:block; padding:10px 0; border-bottom:1px solid var(--line); }
-      .cheat th, .cheat td { border-bottom:0; }
-      .room-list b { display:block; min-width:0; }
-    }
-  </style>
+        strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        a {
+            color: var(--accent-red);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        a:hover {
+            border-bottom-color: var(--accent-red);
+        }
+
+        /* Summary Card */
+        .summary-card {
+            background: var(--surface-raised);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 24px 28px;
+            margin: 24px 0;
+        }
+
+        .summary-card h3 {
+            margin-top: 0;
+            color: var(--accent-warm);
+        }
+
+        .summary-card .headline {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--text-primary);
+            font-style: italic;
+            margin: 0 0 16px;
+        }
+
+        .check-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .check-list li {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: var(--text-secondary);
+            padding: 6px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .check-list li::before {
+            content: "\2713";
+            position: absolute;
+            left: 0;
+            color: var(--accent-warm);
+            font-weight: 600;
+        }
+
+        .cross-list li::before {
+            content: "\2715";
+            color: var(--text-tertiary);
+        }
+
+        /* Standard Lists */
+        ul {
+            padding-left: 20px;
+            margin: 12px 0;
+        }
+
+        li {
+            font-size: 15px;
+            color: var(--text-secondary);
+            padding: 4px 0;
+        }
+
+        li strong {
+            color: var(--text-primary);
+        }
+
+        /* Permission Cards */
+        .permission-grid {
+            display: grid;
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .permission-card {
+            background: var(--surface-raised);
+            border: 1px solid var(--border-light);
+            border-radius: 6px;
+            padding: 20px;
+        }
+
+        .permission-card .icon {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .permission-card .title {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .permission-card p {
+            font-size: 14px;
+            margin: 4px 0;
+        }
+
+        .permission-card .label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-tertiary);
+        }
+
+        /* Feature Card */
+        .feature-card {
+            background: var(--surface-raised);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 24px 28px;
+            margin: 20px 0;
+        }
+
+        .feature-card h3 {
+            margin-top: 0;
+            color: var(--accent-teal);
+        }
+
+        .feature-card p {
+            font-size: 14.5px;
+        }
+
+        .encrypted-badge {
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--accent-teal);
+            background: var(--surface);
+            padding: 3px 8px;
+            border-radius: 4px;
+            border: 1px solid var(--border-light);
+        }
+
+        /* Disclaimer Box */
+        .disclaimer {
+            background: var(--surface);
+            border-left: 3px solid var(--accent-warm);
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .disclaimer p {
+            margin: 0;
+            font-style: italic;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--surface-raised);
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 28px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            border: none;
+            margin-top: 0;
+            padding-bottom: 0;
+        }
+
+        .contact-section .subtitle {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 15px;
+            font-style: italic;
+            color: var(--text-tertiary);
+            margin-bottom: 20px;
+        }
+
+        .contact-details {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            line-height: 2;
+            color: var(--text-secondary);
+        }
+
+        .contact-details .label {
+            font-size: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-tertiary);
+        }
+
+        .contact-details a {
+            color: var(--accent-red);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 48px;
+            padding-top: 24px;
+        }
+
+        .footer .rule {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            margin: 0 auto 20px;
+            width: 120px;
+        }
+
+        .footer p {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            letter-spacing: 2px;
+            color: var(--text-tertiary);
+        }
+
+        .footer .tagline {
+            font-family: 'Source Serif 4', Georgia, serif;
+            font-size: 13px;
+            font-style: italic;
+            color: var(--text-tertiary);
+            margin-top: 8px;
+        }
+
+        /* Code/Path styling */
+        code {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            background: var(--surface);
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: var(--text-secondary);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            body {
+                padding: 24px 16px 40px;
+            }
+
+            .masthead-title {
+                font-size: 24px;
+            }
+
+            .summary-card, .contact-section, .feature-card {
+                padding: 20px;
+            }
+        }
+
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #1C1917;
+                --surface: #252220;
+                --surface-raised: #2C2926;
+                --text-primary: #F5F5F4;
+                --text-secondary: #A8A29E;
+                --text-tertiary: #78716C;
+                --accent-red: #DC2626;
+                --accent-warm: #C9A77C;
+                --accent-teal: #7CB8B8;
+                --border-light: #3D3836;
+                --border-strong: #57534E;
+            }
+        }
+    </style>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
-  <header>
-    <div class="shell topline"><span>Reverie Archive</span><span>A private emotional journal for iPhone</span></div>
-    <nav class="shell" aria-label="Main">
-      <a class="wordmark" href="#top"><span class="mark" aria-hidden="true">R</span><span>Reverie Mood</span></a>
-      <div class="nav-links"><a href="#ritual">The ritual</a><a href="#guide">First five minutes</a><a href="#quiet-room">The Quiet Room</a><a href="#privacy">Privacy</a><a href="#faq">Questions</a></div>
-      <a class="button" href="https://apps.apple.com/us/app/reverie-mood/id6758533319">View on the App Store</a>
-    </nav>
-  </header>
+    <!-- Vintage "Special Edition" frame -->
+    <style>
+        .gazette-frame{display:contents}
+        .gazette-frame i{position:absolute;width:13px;height:13px;background:#91222C;pointer-events:none;z-index:90}
+        .gazette-frame i.tl{top:-7px;left:-7px}
+        .gazette-frame i.tr{top:-7px;right:-7px}
+        .gazette-frame i.bl{bottom:-7px;left:-7px}
+        .gazette-frame i.br{bottom:-7px;right:-7px}
+        @media (max-width:480px){.gazette-frame i{width:11px;height:11px}}
+    </style>
+    <div class="gazette-frame" aria-hidden="true"><i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i></div>
 
-  <main id="main">
-    <section class="hero" id="top" style="padding-bottom:26px;">
-      <div class="shell hero-grid">
-        <div class="hero-copy">
-          <div class="eyebrow">The daily emotional gazette</div>
-          <h1>A soft place to land.</h1>
-          <p>For the good days and the heavy ones, even if you have never kept a journal in your life. Set a mood in seconds. Breathe. Write a little, or not at all.</p>
-          <div class="hero-actions">
-            <a class="store-badge" href="https://apps.apple.com/us/app/reverie-mood/id6758533319"><img src="assets/app-store-badge-en.svg" width="144" height="48" alt="Download on the App Store"></a>
-            <a class="button secondary" href="#guide">Your first five minutes</a>
-          </div>
-          <div class="hero-note">Free to start. iPhone, iOS 17.6 or later. English and Simplified Chinese.</div>
+    <!-- Masthead -->
+    <header class="masthead">
+        <div class="masthead-label">The Official Privacy Statement of</div>
+        <h1 class="masthead-title">Reverie Mood</h1>
+        <div class="masthead-subtitle">Your Private Emotional Gazette</div>
+        <div class="double-rule">
+            <div class="thick"></div>
+            <div class="thin"></div>
         </div>
-        <div class="hero-art">
-          <img class="phone" src="assets/final_01_welcome.jpg" width="550" height="1100" alt="The Reverie Mood welcome screen on an iPhone, in a warm paper-textured design.">
-          <div class="paper-note"><div class="kicker">A small permission slip</div><p>&ldquo;You do not have to make sense of everything today.&rdquo;</p></div>
-        </div>
-      </div>
-    </section>
+        <div class="edition-date">Last Updated · October 27, 2026</div>
+    </header>
 
-    <div class="ticker" aria-hidden="true"><div class="ticker-inner">Set a mood &middot; Write a little &middot; Breathe when the day gets loud &middot; Keep it yours &middot; Set a mood &middot; Write a little &middot; Breathe when the day gets loud &middot; Keep it yours &middot;</div></div>
-
-    <section id="ritual" class="shell" aria-labelledby="ritual-h">
-      <div class="section-head">
-        <div class="eyebrow">The ritual</div>
-        <div><h2 id="ritual-h">Start wherever the day allows.</h2><p class="section-intro">There is no correct way to arrive. Put down one feeling, write a few words, say it out loud, or simply take a breath. Skip a day and it will not scold you.</p></div>
-      </div>
-      <div class="ways">
-        <article class="way"><span class="way-no">01 / NOTICE</span><h3>Set down a feeling.</h3><p>A gentle mood grid makes a check-in possible in seconds. It is not another task to finish.</p></article>
-        <article class="way"><span class="way-no">02 / EXPRESS</span><h3>Say it your way.</h3><p>A few words, a doodle, a photo, or your own voice. However today comes out is enough.</p></article>
-        <article class="way"><span class="way-no">03 / RETURN</span><h3>Find your way back.</h3><p>A year of small dots becomes a map of the days you have lived through.</p></article>
-      </div>
-    </section>
-
-    <section id="guide" class="guide" aria-labelledby="guide-h">
-      <div class="shell">
-        <div class="section-head">
-          <div class="eyebrow">How it works</div>
-          <div><h2 id="guide-h">Your first five minutes.</h2><p class="section-intro">Reverie Mood is quiet on purpose, so a few things are worth knowing up front. Everything below is optional. You can open the app, set one mood, and close it again.</p></div>
-        </div>
-
-        <div class="guide-layout">
-          <figure class="guide-shot">
-            <img src="assets/final_02_calendar.jpg" width="550" height="1190" alt="The Reverie Mood home screen: PREFERENCES and THE QUIET ROOM along the top, a year of days laid out by month, an ARCHIVES button at the lower left, a COMPOSE button at the lower right, and a flip-calendar date strip along the bottom." loading="lazy">
-            <figcaption>The home screen. Top: PREFERENCES and THE QUIET ROOM. Bottom left: ARCHIVES. Bottom right: COMPOSE. Along the bottom: the date strip.</figcaption>
-          </figure>
-
-          <div>
-            <ol class="steps">
-              <li>
-                <h3>Set a mood.</h3>
-                <p>The first time you open the app, a short welcome shares three promises about privacy, then asks one question: how are you, right now? Touch anywhere on the grid: left is unpleasant, right is pleasant, the top is high energy, the bottom is low energy. That is a complete entry, and it becomes today&rsquo;s first dot. You can skip the welcome, or the question, at any time. On later days, tap <span class="ui">Compose</span> on the home screen. You can publish with just your mood.</p>
-                <p class="optional">The first time you open the full entry screen, a short Reporter&rsquo;s Guide walks you through it. Tap START WRITING whenever you are ready.</p>
-              </li>
-              <li>
-                <h3>Say more, only if you want to.</h3>
-                <p>Describe the feeling in your own words, attach a photo, record a voice memo, or add a doodle (doodles are part of Reverie+). Pick one, pick all, or pick none.</p>
-              </li>
-              <li>
-                <h3>Press and hold to talk.</h3>
-                <p>The fastest way to record is a shortcut: on the home screen, <b>press and hold</b> <span class="ui">Compose</span> until the ring around the button fills, which takes a little over half a second. A small recorder opens and starts at once. Speak, then tap <span class="ui">Save</span>. Once you have logged today, your cloud companion Puff takes that spot, and you can still add words, a photo or a voice memo by tapping today&rsquo;s dot.</p>
-              </li>
-              <li>
-                <h3>Look back, gently.</h3>
-                <p>Every day you log becomes a colored dot. Tap any dot to open that day. Press and hold a dot to edit or delete it. Tap the year number at the top to open the month view, or swipe it left and right (or use the arrows beside it) to change year. <span class="ui">Archives</span> gathers what you wrote, recorded, photographed or drew, and lets you search it.</p>
-              </li>
-              <li>
-                <h3>When the day gets loud.</h3>
-                <p>Tap <span class="ui">The Quiet Room</span> at the top right. Inside you will find guided breathing, grounding exercises, ambient sounds you tune like an old radio, affirmations, letters you can keep, release or burn, and the Shared Cove for one trusted person.</p>
-              </li>
-              <li>
-                <h3>Make it yours, and keep it safe.</h3>
-                <p>Tap <span class="ui">Preferences</span> at the top left. <span class="ui">Daily Dispatch</span> sets an optional gentle reminder. Reminders are off until you turn them on. <span class="ui">Appearance</span> changes the look. <span class="ui">Widget Text</span> turns the words from your entries on widgets on or off. <span class="ui">Help Desk</span> has a short guide to all of this, replays the welcome, and shows how to write to us. Your journal lives on your phone, and <span class="ui">Backup Manager</span> says plainly what is kept where. To keep a copy somewhere safe, make sure <span class="ui">iCloud Mirror</span> is on there, or make a file with <span class="ui">DISPATCH A COPY</span>.</p>
-              </li>
-            </ol>
-
-            <div class="cheat">
-              <h3>Little things worth knowing</h3>
-              <table>
-                <caption>Quiet shortcuts on the home screen and in an entry.</caption>
-                <tbody>
-                  <tr><th scope="row">Quick voice memo</th><td>Press and hold <span class="ui">Compose</span> until the ring fills, speak, then tap <span class="ui">Save</span>.</td></tr>
-                  <tr><th scope="row">Back to today</th><td>Tap the date strip along the bottom.</td></tr>
-                  <tr><th scope="row">Travel to another date</th><td>Press and hold the date strip, then choose a day.</td></tr>
-                  <tr><th scope="row">Month view</th><td>Tap the year at the top of the home screen.</td></tr>
-                  <tr><th scope="row">Edit or delete a day</th><td>Press and hold that day&rsquo;s dot.</td></tr>
-                  <tr><th scope="row">Next or previous day</th><td>Inside an entry, when you are not typing, swipe left or right in the lower half of the screen.</td></tr>
-                  <tr><th scope="row">Save and go back</th><td>Inside an entry, tap ARCHIVE at the top left, or, when you are not typing, swipe down from the lower half of the screen.</td></tr>
-                  <tr><th scope="row">Home screen widgets</th><td>Touch and hold your Home Screen, tap the plus button, and search for Reverie Mood. There are widgets for your year, your week, today, Puff, soundscapes and the Cove, plus Lock Screen versions.</td></tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="quiet-room" class="feature" aria-labelledby="qr-h">
-      <div class="shell feature-layout">
-        <div class="feature-copy">
-          <div class="eyebrow">The Quiet Room</div>
-          <h2 id="qr-h">When the world gets loud, make the room smaller.</h2>
-          <p>Built for the moments you need a little less noise. Open it from the top of the home screen whenever you like.</p>
-          <ul class="room-list">
-            <li><b>Breathing</b>Guided breathing with a gentle, slow animation.</li>
-            <li><b>Grounding</b>Short exercises for anxious moments, such as 5-4-3-2-1.</li>
-            <li><b>Sounds</b>Ambient soundscapes you mix and tune like a radio.</li>
-            <li><b>Comfort Column</b>Affirmations, and words you want to keep.</li>
-            <li><b>Letters</b>Write it down, then keep it sealed, release it, or let it burn.</li>
-            <li><b>Puff</b>A small cloud who mirrors your mood.</li>
-          </ul>
-          <div class="rule" aria-hidden="true"><span></span></div>
-          <div class="kicker">No public feed &middot; no pressure &middot; just a place to return to</div>
-        </div>
-        <div class="visual-pair">
-          <img src="assets/final_05_quietroom.jpg" width="550" height="1190" alt="The Reverie Mood Quiet Room menu." loading="lazy">
-          <img src="assets/final_06_breathing.jpg" width="550" height="1190" alt="A guided breathing exercise in Reverie Mood." loading="lazy">
-        </div>
-      </div>
-    </section>
-
-    <section id="cove" class="cove" aria-labelledby="cove-h">
-      <div class="shell">
-        <div class="section-head"><div class="eyebrow">A slower kind of connection</div><div><h2 id="cove-h">Stay close without having to keep up.</h2><p class="section-intro">The Shared Cove is a private space for two people to exchange letters in their own time. Invite one person with a QR code or a link. No sign-up, no profile, no feed.</p></div></div>
-        <div class="cove-card">
-          <div class="cove-image"><img src="assets/final_09_cove.jpg" width="550" height="1190" alt="The Shared Cove, a private letter space for two people." loading="lazy"></div>
-          <div class="cove-copy">
-            <div class="kicker">Letters between trusted people</div>
-            <h3>There is no pressure to reply right away.</h3>
-            <p>Send a note now. Let it drift. Come back tomorrow or next week. The shore is still there.</p>
-            <p>The Cove uses iCloud to connect the two of you, so you both need to be signed in to iCloud.</p>
-            <div class="quote">&ldquo;Connection, with room to breathe.&rdquo;</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="maker" class="maker" aria-labelledby="maker-h">
-      <div class="shell maker-layout">
-        <div>
-          <div class="eyebrow">A note from the maker</div>
-          <h2 id="maker-h" style="margin-top:16px;">Made for the version of me who needed somewhere to put what I was feeling.</h2>
-        </div>
-        <div class="letter">
-          <p>A few years ago I walked away from a job, a city, and most of a life. I called it burnout. The truth is I got lost &mdash; no direction in my work, no direction in anything &mdash; and for a long stretch I stopped reaching for the world at all. Days blurred together. I&rsquo;d become a lonely island.</p>
-          <p>The turn didn&rsquo;t come from anyone pushing me. One day I just knew: <em>this isn&rsquo;t it.</em> I started small &mdash; books, then a few words copied down, then moving my body again, then a quieter life somewhere far away. Writing was the thread that pulled me back. But I&rsquo;m forgetful and easily overwhelmed, and most days even getting the notebook out was too much.</p>
-          <p>So I built the place I needed. Somewhere to set a mood down in seconds. To write a letter to myself, or to no one at all. To keep the words that got me through. To say things out loud again, on the days my own voice had gone rusty from disuse. To breathe when the night got loud. And to stay close to a couple of people without ever feeling pushed &mdash; reply now, tomorrow, or in a week; the door stays open.</p>
-          <p>Reverie Mood is that place. I made it for the version of me who needed somewhere to put what I was feeling. However today is going, I&rsquo;m glad you&rsquo;re here. Nothing to keep up. Nothing to prove. Just a soft place to land.</p>
-          <p class="sign">Antheia</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="privacy" class="privacy" aria-labelledby="privacy-h">
-      <div class="shell">
-        <div class="eyebrow">Your feelings are not a product</div>
-        <h2 id="privacy-h">A journal that stays yours.</h2>
-        <p>Your entries live on your phone. There is no Reverie account to make and no one reading along. An iCloud Mirror keeps a private copy of your backups, photos, doodles and voice memos in your own iCloud Drive. It starts on for a new install, and you can switch it off at any time.</p>
-        <div class="privacy-grid">
-          <div><strong>No ads</strong><span>Your quiet is not inventory</span></div>
-          <div><strong>No third-party analytics</strong><span>No one watching your inner life</span></div>
-          <div><strong>No Reverie account</strong><span>Begin without handing over yourself</span></div>
-        </div>
-        <p class="fineprint">Read the full <a href="privacy/">privacy policy</a>.</p>
-      </div>
-    </section>
-
-    <section id="faq" class="faq" aria-labelledby="faq-h">
-      <div class="shell">
-        <div class="section-head"><div class="eyebrow">Questions</div><div><h2 id="faq-h">Good to know.</h2></div></div>
-        <div class="faq-list">
-          <details><summary>Is it free?</summary><div><p>Yes, it is free to download and to keep using. The mood grid, your year and month views, one photo per entry, a daily voice memo, letters to yourself, the Comfort Column, your first Shared Cove, and a starter set of breathing, grounding and sounds are all free. Reverie+ is an optional upgrade that adds doodles, more photos and voice memos, the full library of exercises and sounds, more coves, time capsules, PDF export and more ways to personalize. The App Store page shows current pricing and what is included.</p></div></details>
-          <details><summary>Where is my journal stored?</summary><div><p>On your iPhone. There is no Reverie account and no server holding your entries.</p><p>The iCloud Mirror is in Preferences, under Backup Manager. It copies your backups and your photos, doodles and voice memos into your own iCloud Drive, in a folder named Reverie Mood that also shows in the Files app. It starts on for a new install; a phone that had Reverie Mood before keeps the choice it had, so if you want a copy that survives a lost or replaced phone, check that it is on.</p></div></details>
-          <details><summary>How do I move to a new iPhone?</summary><div><p>Before you switch, check that iCloud Mirror is on in the Backup Manager and let it finish. On the new phone, install Reverie Mood and choose “I have a backup to restore” on the welcome page, or open Preferences, then Backup Manager, choose the backup you want, and tap Restore. Restoring is a step you take yourself; it does not happen on its own. Photos, doodles and voice memos are kept out of ordinary iPhone backups, so the iCloud Mirror is how they travel to a new phone.</p></div></details>
-          <details><summary>Does it need the internet?</summary><div><p>Not to write, look back, or use the calming tools; the sounds are stored in the app. The Shared Cove needs an internet connection and an iCloud account, because that is how the letters travel between you and the person you invited. The optional iCloud Mirror and buying Reverie+ need a connection too.</p></div></details>
-          <details><summary>How do reminders work?</summary><div><p>Daily reminders are off until you say yes. The app offers a quiet evening reminder once or twice, never right after a heavy mood, and stops for good if you choose No thanks. Open Preferences, then Daily Dispatch, to choose a time, or to change or stop it at any time. Once you allow notifications, Daily Dispatch also has Quiet Check-ins: if a week, two weeks or three weeks pass without you opening the app, a soft note may arrive. It is on by default, and you can switch it off there.</p></div></details>
-          <details><summary>Is there a guide inside the app?</summary><div><p>Yes. Open Preferences, then Help Desk. It has a short guide to everything in the app, replays the welcome, and lets you turn the little tips on or off.</p></div></details>
-          <details><summary>Does it work on iPad or in other languages?</summary><div><p>Reverie Mood is made for iPhone and needs iOS 17.6 or later. An iPad can run it as an iPhone app, but it has no iPad layout of its own. The app is in English and Simplified Chinese.</p></div></details>
-          <details><summary>Is Reverie Mood a mental health service?</summary><div><p>No. It is a personal journal and a set of calming tools, not a replacement for professional care.</p></div></details>
-          <details><summary>I found a problem, or I have an idea.</summary><div><p>Please write to <a href="mailto:reveriearchive.studio@gmail.com">reveriearchive.studio@gmail.com</a>. You will usually hear back within a couple of days. There is also a short <a href="support/">support page</a>.</p></div></details>
-        </div>
-      </div>
-    </section>
-
-    <section class="closing" aria-labelledby="closing-h">
-      <div class="shell">
-        <div class="eyebrow">Reverie Mood</div>
-        <h2 id="closing-h">Open it. Notice one thing. That is enough.</h2>
-        <p>Free to start, and it will never push you.</p>
-        <a class="button" href="https://apps.apple.com/us/app/reverie-mood/id6758533319">View on the App Store</a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="shell footer-inner">
-      <span>&copy; 2026 Reverie Archive &middot; Reverie Mood is a private emotional journal</span>
-      <nav aria-label="Footer"><a href="privacy/">Privacy policy</a><a href="support/">Support</a><a href="mailto:reveriearchive.studio@gmail.com">Contact</a></nav>
-      <span class="credit">Apple and the Apple logo are trademarks of Apple Inc., registered in the U.S. and other countries.</span>
+    <!-- Quick Summary -->
+    <div class="summary-card">
+        <h3>At a Glance</h3>
+        <p class="headline">"Your journal stays on your device. Only your own backup copy and what you choose to share travel through Apple's cloud."</p>
+        <ul class="check-list">
+            <li>All journal data stored locally on your device</li>
+            <li>No servers, no analytics, no tracking</li>
+            <li>Shared features use Apple's iCloud only</li>
+            <li>Subscriptions processed entirely by Apple</li>
+            <li>No advertisements, ever</li>
+        </ul>
     </div>
-  </footer>
+
+    <!-- Philosophy -->
+    <h2>Our Philosophy</h2>
+    <p>Reverie Mood is a privacy-first mood journal by Reverie Archive. Your emotional reflections are yours alone. Everything you write, record, sketch, and feel stays on your device, and in your own private iCloud Drive while the iCloud Mirror is on (see iCloud &amp; Backups below). It reaches another person only if you explicitly choose to share it with a friend through the Shared Cove.</p>
+
+    <!-- What Stays on Your Device -->
+    <h2>What Stays on Your Device</h2>
+    <p>The vast majority of Reverie Mood lives on your device (the iCloud Mirror, described below, can also keep a private copy of your backups, photos, doodles, and voice memos in your own iCloud Drive):</p>
+    <ul>
+        <li><strong>Mood entries</strong>, written reflections, and voice memos</li>
+        <li><strong>Photos and doodles</strong> attached to entries</li>
+        <li><strong>Breathing and grounding exercises</strong> — activity records and progress</li>
+        <li><strong>Letters to the Ether</strong> — private postcards you compose, keep, release, or burn</li>
+        <li><strong>Ambient sounds and comfort affirmations</strong> — usage preferences</li>
+        <li><strong>Companion data</strong> — your Puff's name and your display name</li>
+        <li><strong>Subscription status</strong> — your Reverie+ entitlement, stored locally for offline access</li>
+        <li><strong>App settings</strong> — all your preferences and customizations</li>
+    </ul>
+
+    <!-- What Travels Through iCloud -->
+    <h2>What Travels Through iCloud</h2>
+    <p>Two features in The Quiet Room send data beyond your device — and only through <strong>Apple's iCloud (CloudKit)</strong>. We operate no servers of our own. (The iCloud Mirror, which keeps your own backup copy in your private iCloud Drive, is described under iCloud &amp; Backups.)</p>
+
+    <div class="feature-card">
+        <h3>The Shared Cove</h3>
+        <p>Exchange handwritten-style letters with a close friend. You create a private cove by sending your friend an invitation, either a QR code or a link, and letters drift between you like messages in bottles. Anyone who has the invitation can use it, so send it only to the person you mean to invite.</p>
+        <p style="margin-top: 12px;"><span class="encrypted-badge">Encrypted by Apple in transit and at rest</span></p>
+        <p>Letters and whisper replies are stored in iCloud (CloudKit), in the space shared between you and the friend you invite, and that is how they reach each other. Apple's servers encrypt them in transit and at rest. They are <em>not</em> end-to-end encrypted. We operate no servers and have no way to read them.</p>
+        <p>Display names, timestamps, delivery status, emoji reactions, and opt-in mood snapshots are stored in iCloud in the same way. A letter can also carry a small photo stamp, a picture you choose or take for that letter. If Mood sharing is on for that cove, it also carries a small tag with the mood you logged that day, which your friend sees beside the letter. These travel with the letter and are stored in iCloud like the rest. Reverie Mood never reads your real name or Apple ID; the only name in a cove is the display name you type.</p>
+        <p><strong>Keepsakes.</strong> If you save a stamp from a letter to your Keepsakes, a copy is also stored in your own private iCloud: the stamp picture, a short excerpt of the letter, and the cove's name and emoji. Only your Apple account can read it, and removing the keepsake removes it.</p>
+    </div>
+
+    <div class="feature-card">
+        <h3>Shoreline Rituals</h3>
+        <p>Gentle daily intentions you share with a friend — synced through the same iCloud zone as your Shared Cove. Ritual data includes the category (e.g. "walking", "reading"), duration, and daily check-ins with optional short notes. This data is stored the same way and is not end-to-end encrypted.</p>
+    </div>
+
+    <div class="feature-card">
+        <h3>Your Controls</h3>
+        <p>You decide what's shared:</p>
+        <ul>
+            <li><strong>Mood sharing</strong> — off by default. You opt in per cove. When it is on, your friend can see your daily mood and the mood tag on your letters.</li>
+            <li><strong>Read receipts</strong> — can be toggled off per cove</li>
+            <li><strong>Leave Cove</strong> — if you created the cove, leaving permanently deletes every letter, reaction, whisper, and ritual in it from iCloud, for both of you. If you joined a friend's cove, leaving removes it from your device; your friend keeps their copy.</li>
+            <li><strong>Block</strong> — leaves the cove, as described above, and stops that person from connecting with you again on this device</li>
+        </ul>
+    </div>
+
+    <!-- Reverie+ -->
+    <h2>Reverie+</h2>
+    <p>Reverie Mood offers an optional premium tier. Here's what you should know:</p>
+    <ul>
+        <li><strong>All payments are handled by Apple.</strong> We never see your credit card, billing address, or Apple ID credentials.</li>
+        <li><strong>Plans</strong> are monthly and annual, and the annual plan starts with a 7-day free trial for new subscribers. A one-time lifetime purchase is offered only at certain times, such as the launch and the 2026 holidays; if you buy it, it stays yours and can be restored.</li>
+        <li><strong>We store your entitlement locally</strong> — just whether you're on the free or premium tier — so the app works offline.</li>
+        <li><strong>Early adopters</strong> who journaled before Reverie+ was introduced were given a complimentary 30-day courtesy period, detected entirely on your device.</li>
+        <li><strong>Manage or cancel</strong> anytime at <code>Settings → [Your Name] → Subscriptions</code>.</li>
+    </ul>
+    <p>Reverie Mood uses <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple's Standard EULA</a> for all in-app purchases.</p>
+
+    <!-- Permissions -->
+    <h2>Permissions We Request</h2>
+    <div class="permission-grid">
+        <div class="permission-card">
+            <div class="icon">🎙</div>
+            <div class="title">Microphone</div>
+            <p>Record voice memos for daily reflections. Audio stays on your device, or in your own iCloud Drive while the iCloud Mirror is on.</p>
+        </div>
+
+        <div class="permission-card">
+            <div class="icon">📷</div>
+            <div class="title">Camera & Photos</div>
+            <p>Attach photos to entries, scan Shared Cove QR codes, and take or choose a photo stamp for a Shared Cove letter. Photos on your entries stay on your device, or in your own iCloud Drive while the iCloud Mirror is on. A photo stamp is sent to your friend with that letter, through iCloud.</p>
+        </div>
+
+        <div class="permission-card">
+            <div class="icon">🔔</div>
+            <div class="title">Notifications</div>
+            <p>Daily reminders and quiet check-ins (scheduled on your phone) and Shared Cove letter alerts (via iCloud).</p>
+        </div>
+
+        <div class="permission-card">
+            <div class="icon">☁️</div>
+            <div class="title">iCloud Account</div>
+            <p>Required for Shared Cove, Shoreline Rituals, and Keepsakes. Uses an opaque ID — not your email or name.</p>
+        </div>
+    </div>
+
+    <!-- Backups -->
+    <h2>iCloud & Backups</h2>
+    <p>Reverie Mood offers an in-app backup to your private iCloud Drive, called the iCloud Mirror. On a new install it starts switched on, and the first time you have a photo, doodle, or voice memo to keep, the app tells you so; you can switch it off at any time in Preferences, under Backup Manager. A phone that already had Reverie Mood keeps the choice it had, which was off until you switched it on. The mirror copies your backups and your photos, doodles, and voice memos into a folder named Reverie Mood in your iCloud Drive, which you can also open in the Files app. These copies are stored in your personal Apple account and are not accessible to us.</p>
+    <p>When you delete a photo, doodle, or voice memo from your journal, the app removes its copy from the mirror the next time it can reach iCloud. Making a photo smaller on your phone, or keeping an entry as text only, frees room on the phone and leaves the full-size copy in the mirror.</p>
+    <p><strong>Dispatch a Copy.</strong> In Preferences you can make a file of your journal, with the words only or with the pictures too, and send it wherever you choose, such as Files, Mail, or AirDrop. The app makes the file on your phone. We never receive it, and it goes only where you send it.</p>
+    <p>If you have device-level iCloud Backup enabled, Reverie Mood data may also be included, except photos, doodles, and voice memos, which the app keeps out of device backups. You can manage this at <code>Settings → [Your Name] → iCloud → Manage Storage → Backups</code>.</p>
+
+    <!-- Deleting Your Data -->
+    <h2>Deleting Your Data</h2>
+    <p>You're always in control:</p>
+    <ul>
+        <li>Delete individual entries, voice memos, photos, and doodles from the archive</li>
+        <li>Delete Letters to the Ether postcards, or let released ones expire after 180 days</li>
+        <li>Delete iCloud Drive backups from the backup manager</li>
+        <li><strong>Leave a Shared Cove</strong> you created to permanently erase every letter, reaction, whisper, and ritual in it from iCloud, for both of you. If you joined a friend's cove, leaving removes it from your device and your friend keeps their copy</li>
+        <li>Remove a Keepsake to delete its copy from your private iCloud</li>
+        <li><strong>Cancel your subscription</strong> through Apple ID settings — access continues until the billing period ends, then your local entitlement is cleared</li>
+        <li>Uninstalling the app deletes everything stored on your device. Copies kept in iCloud (the iCloud Mirror, Shared Cove data, and Keepsakes) stay there until you delete them</li>
+    </ul>
+
+    <!-- What We Don't Do -->
+    <h2>What We Don't Do</h2>
+    <ul class="check-list cross-list">
+        <li>Operate servers — shared features use Apple's iCloud only</li>
+        <li>Use analytics or tracking of any kind</li>
+        <li>Share, sell, or monetize your data</li>
+        <li>Display advertisements</li>
+        <li>See or store your payment information</li>
+        <li>Read your letters or whispers</li>
+    </ul>
+
+    <!-- Children -->
+    <h2>Children's Privacy</h2>
+    <p>Reverie Mood is not intended for children under 13. We do not knowingly collect information from children.</p>
+
+    <!-- Disclaimer -->
+    <div class="disclaimer">
+        <p><strong>Reverie Mood is not a medical app.</strong> It's a personal wellness journal. If you're experiencing mental health concerns, please reach out to a qualified professional.</p>
+    </div>
+
+    <!-- Third Party -->
+    <h2>Third-Party Services</h2>
+    <p>Reverie Mood uses Apple's native frameworks — SwiftData, AVFoundation, CloudKit, and StoreKit — which are subject to <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>. No other third-party services are used.</p>
+
+    <!-- Changes -->
+    <h2>Changes to This Policy</h2>
+    <p>We may update this policy occasionally. Changes are reflected with an updated date at the top of this page. The May 2026 edition added Reverie+ subscription coverage and Shoreline Rituals, and restructured the Quiet Room section. The October 2026 edition corrects how Shared Cove letters are protected: they are encrypted by Apple in transit and at rest, but they are not end-to-end encrypted. It also spells out what travels with a letter (a photo stamp, and a mood tag when Mood sharing is on), the Keepsakes copy in your private iCloud, and what happens when you leave a cove, which depends on who created it. The October 26 edition describes the iCloud Mirror as it now works (it starts on for a new install, shows in the Files app, and removes a picture's copy when you delete the picture) and describes Dispatch a Copy.</p>
+
+    <!-- Contact -->
+    <div class="contact-section">
+        <h2>Contact the Editor</h2>
+        <p class="subtitle">Questions about this Privacy Policy?</p>
+        <div class="contact-details">
+            <span class="label">Email</span><br>
+            <a href="mailto:reveriearchive.studio@gmail.com">reveriearchive.studio@gmail.com</a><br><br>
+            <span class="label">Developer</span><br>
+            Antheia Li<br><br>
+            <span class="label">Application</span><br>
+            Reverie Mood by Reverie Archive
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="rule">
+            <div class="thick"></div>
+            <div class="thin"></div>
+        </div>
+        <p>&copy; 2026 REVERIE ARCHIVE</p>
+        <p class="tagline">Your privacy matters.</p>
+    </footer>
 </body>
 </html>
