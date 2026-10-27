@@ -31,11 +31,21 @@
   .card{background:#FBF7EE;border:1px solid var(--rule);border-radius:14px;padding:18px 22px;margin:14px 0}
   .q{font-weight:bold;margin-top:14px}
   footer{text-align:center;color:var(--muted);font-size:13px;margin-top:36px}
+  .sitenav{display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;line-height:1.2;margin:-14px 0 14px;border-bottom:1px solid var(--rule)}
+  .sitenav a{text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+  .sitenav a:hover,.sitenav a:focus{text-decoration:underline}
+  .sitenav{padding-bottom:16px;margin:-14px 0 22px;flex-wrap:wrap}
+  .sitenav a.home{background:var(--accent);color:#fff;border-radius:999px;padding:0 20px;font-size:15px;font-weight:700;letter-spacing:.02em;text-transform:none;box-shadow:0 2px 0 rgba(43,35,24,.18)}
+  .sitenav a.home:hover,.sitenav a.home:focus{background:#7a1c25;text-decoration:none}
 </style>
 </head>
 <body>
   <div class="wrap">
     <i class="corner tl" aria-hidden="true"></i><i class="corner tr" aria-hidden="true"></i><i class="corner bl" aria-hidden="true"></i><i class="corner br" aria-hidden="true"></i>
+    <nav class="sitenav" aria-label="Reverie Mood site">
+      <a class="home" href="../">&larr; Back to Reverie Mood</a>
+      <a href="../privacy/">Privacy Policy</a>
+    </nav>
     <div class="eyebrow">The Daily Emotional Gazette</div>
     <h1>Reverie Mood — Support</h1>
     <p class="sub">A gentle companion for your emotional well-being.</p>
@@ -81,7 +91,7 @@
 
     <hr />
     <p style="text-align:center">
-      <a href="../privacy/">Privacy Policy</a>
+      <a href="../">Reverie Mood</a> &nbsp;&middot;&nbsp; <a href="../privacy/">Privacy Policy</a>
     </p>
 
     <footer>© 2026 Reverie Archive</footer>
