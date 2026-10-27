@@ -433,6 +433,21 @@
     </style>
     <div class="gazette-frame" aria-hidden="true"><i class="tl"></i><i class="tr"></i><i class="bl"></i><i class="br"></i></div>
 
+    <!-- Site navigation: the way back to the home page and on to Support -->
+    <style>
+        .sitenav{display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;line-height:1.2}
+        .sitenav a{color:var(--accent-red);text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+        .sitenav a:hover,.sitenav a:focus{text-decoration:underline}
+        .sitenav.top{margin:-12px 0 22px;padding-bottom:16px;border-bottom:1px solid var(--border-strong);flex-wrap:wrap}
+        .sitenav a.home{background:var(--accent-red);color:#fff;border-radius:999px;padding:0 20px;font-size:15px;font-weight:700;letter-spacing:.02em;text-transform:none;box-shadow:0 2px 0 rgba(28,25,23,.18)}
+        .sitenav a.home:hover,.sitenav a.home:focus{background:#7a1c25;text-decoration:none}
+        .sitenav.foot{justify-content:center;gap:26px;margin-top:6px;flex-wrap:wrap}
+    </style>
+    <nav class="sitenav top" aria-label="Reverie Mood site">
+        <a class="home" href="../">&larr; Back to Reverie Mood</a>
+        <a href="../support/">Support</a>
+    </nav>
+
     <!-- Masthead -->
     <header class="masthead">
         <div class="masthead-label">The Official Privacy Statement of</div>
@@ -442,7 +457,7 @@
             <div class="thick"></div>
             <div class="thin"></div>
         </div>
-        <div class="edition-date">Last Updated · October 26, 2026</div>
+        <div class="edition-date">Last Updated · October 27, 2026</div>
     </header>
 
     <!-- Quick Summary -->
@@ -510,7 +525,7 @@
     <p>Reverie Mood offers an optional premium tier. Here's what you should know:</p>
     <ul>
         <li><strong>All payments are handled by Apple.</strong> We never see your credit card, billing address, or Apple ID credentials.</li>
-        <li><strong>Plans</strong> are monthly and annual, and the annual plan starts with a 7-day free trial for new subscribers. A one-time lifetime purchase was offered for a limited time at launch; if you bought it, it stays yours and can be restored.</li>
+        <li><strong>Plans</strong> are monthly and annual, and the annual plan starts with a 7-day free trial for new subscribers. A one-time lifetime purchase is offered only at certain times, such as the launch and the 2026 holidays; if you buy it, it stays yours and can be restored.</li>
         <li><strong>We store your entitlement locally</strong> — just whether you're on the free or premium tier — so the app works offline.</li>
         <li><strong>Early adopters</strong> who journaled before Reverie+ was introduced were given a complimentary 30-day courtesy period, detected entirely on your device.</li>
         <li><strong>Manage or cancel</strong> anytime at <code>Settings → [Your Name] → Subscriptions</code>.</li>
@@ -615,6 +630,11 @@
         </div>
         <p>&copy; 2026 REVERIE ARCHIVE</p>
         <p class="tagline">Your privacy matters.</p>
+        <nav class="sitenav foot" aria-label="Reverie Mood site">
+            <a href="../">Reverie Mood</a>
+            <a href="../support/">Support</a>
+            <a href="mailto:reveriearchive.studio@gmail.com">Contact</a>
+        </nav>
     </footer>
 </body>
 </html>
