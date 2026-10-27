@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://reveriearchive-studio.github.io/reverie-mood/sitemap.xml
